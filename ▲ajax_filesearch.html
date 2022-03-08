@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <title>画像一覧</title>
+</head>
+
+<body>
+  <fieldset>
+    <legend>ExchangeD日記画像一覧</legend>
+  <div class="md:flex">
+    <ul class="md:flex  md:justify-center">
+      <li class="border-b md:border-none"><a href="exchanged_input.php"
+          class="block px-8 py-2 my-4 hover:bg-gray-600 rounded">HOME</a></li>
+      <li class="border-b md:border-none"><a href="未user_ajax.php"
+          class="block px-8 py-2 my-4 hover:bg-gray-600 rounded">タイムライン</a></li>
+      <li class="border-b md:border-none"><a href="ajax_search.html"
+          class="block px-8 py-2 my-4 hover:bg-gray-600 rounded">検索</a></li>
+      <li class="border-b md:border-none"><a href="未user_自然言語.php"
+          class="block px-8 py-2 my-4 hover:bg-gray-600 rounded">自然言語</a></li>
+      <li class="border-b md:border-none"><a href="使い方説明.php"
+          class="block px-8 py-2 my-4 hover:bg-gray-600 rounded">ExchangeDについて</a></li>
+      <li class="border-b md:border-none"><a href="未user_アカウント管理"
+          class="block px-8 py-2 my-4 hover:bg-gray-600 rounded">◎セッション◎さん</a></li>
+      <li><a href="#" class="block px-8 py-2 my-4 hover:bg-gray-600 rounded">お問い合わせ</a></li>
+    </ul>
+  </div>
+    <table>
+      <tbody id="result">
+        <!-- ここに<tr><td>deadline</td><td>todo</td><tr>の形でデータが入る -->
+      </tbody>
+    </table>
+  </fieldset>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+
+    const requestUrl = "ajax_fileget.php";
+
+    axios
+      .get(requestUrl)
+      .then(function(response){
+        const array=[];
+        response.data.forEach(function(x){
+         array.push(`<tr><td>${x.file}</td><tr>`);
+        });
+         $('#result').html(array);         
+      })
+      .catch(function(error){
+         console.log(error);
+      });
+              
+  </script>
+</body>
+
+</html>

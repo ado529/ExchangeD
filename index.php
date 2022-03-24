@@ -19,7 +19,7 @@ check_session_id();
   <div  class="md:flex">
     <ul class="md:flex  md:justify-center">
       <li class="border-b md:border-none"><a href="exchanged_input.php" class="block px-8 py-2 my-4 hover:bg-gray-600 rounded">HOME</a></li>
-      <li class="border-b md:border-none"><a href="未user_ajax.php" class="block px-8 py-2 my-4 hover:bg-gray-600 rounded">タイムライン</a></li>
+      <li class="border-b md:border-none"><a href="未user_ajax.php" class="block px-8 py-2 my-4 hover:bg-gray-600 rounded">一覧</a></li>
       <li class="border-b md:border-none"><a href="ajax_search.html" class="block px-8 py-2 my-4 hover:bg-gray-600 rounded">検索</a></li>
       <li class="border-b md:border-none"><a href="未user_自然言語.php" class="block px-8 py-2 my-4 hover:bg-gray-600 rounded">自然言語</a></li>
       <li class="border-b md:border-none"><a href="使い方説明.php" class="block px-8 py-2 my-4 hover:bg-gray-600 rounded">ExchangeDについて</a></li>

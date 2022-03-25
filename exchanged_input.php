@@ -16,18 +16,10 @@ check_session_id();
 
 <body>
   <legend>ExchangeD日記入力画面（HOME）</legend>
-  <div  class="md:flex">
-    <ul class="md:flex  md:justify-center">
-      <li class="border-b md:border-none"><a href="exchanged_input.php" class="block px-8 py-2 my-4 hover:bg-gray-600 rounded">HOME</a></li>
-      <li class="border-b md:border-none"><a href="未user_ajax.php" class="block px-8 py-2 my-4 hover:bg-gray-600 rounded">一覧</a></li>
-      <li class="border-b md:border-none"><a href="ajax_search.html" class="block px-8 py-2 my-4 hover:bg-gray-600 rounded">検索</a></li>
-      <li class="border-b md:border-none"><a href="未user_自然言語.php" class="block px-8 py-2 my-4 hover:bg-gray-600 rounded">自然言語</a></li>
-      <li class="border-b md:border-none"><a href="使い方説明.php" class="block px-8 py-2 my-4 hover:bg-gray-600 rounded">ExchangeDについて</a></li>
-      <li class="border-b md:border-none"><a href="未user_アカウント管理" class="block px-8 py-2 my-4 hover:bg-gray-600 rounded"> 管理画面</a></li>
-      <li><a href="#" class="block px-8 py-2 my-4 hover:bg-gray-600 rounded">お問い合わせ</a></li>
-      <li><p class="block px-8 py-2 my-4 bg-gray-600 rounded"><?php echo $_SESSION["username"];?>さんでログイン中</p></li>
-    </ul>
-  </div>
+
+  <?php
+  include("navigation.php");
+  ?> 
         
   <form action="exchanged_create.php" method="POST" enctype="multipart/form-data">
     <fieldset>
@@ -55,6 +47,10 @@ check_session_id();
       </div>
     </fieldset>
   </form>
+
+  <?php
+  include("footer.php");
+  ?>
 
 </body>
 

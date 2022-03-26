@@ -8,15 +8,13 @@ check_session_id();
 //exit();
 
 if (
-  !isset($_POST['destination']) || $_POST['destination'] == '' ||
-  !isset($_POST['opentime']) || $_POST['opentime'] == ''
+  !isset($_POST['diary']) || $_POST['diary'] == ''
 ) {
-  exit('opentimeが入力されていません');
+  exit('diaryが入力されていません');
 }
 
-$destination = $_POST['destination'];
+$writer = $_POST['writer'];
 $diary = $_POST['diary'];
-$opentime = $_POST['opentime'];
 
 if($_FILES['upfile']['error']==4){
   $save_path=null;
@@ -44,15 +42,14 @@ if($_FILES['upfile']['error']==4){
 
 $pdo = connect_to_db();
 
-$sql = 'INSERT INTO diary_table(id, username, destination, diary, file, opentime, is_deleted, created_at, updated_at)
- VALUES(NULL,:username, :destination, :diary, :file, :opentime, 0, now(), now())';
+$sql = 'INSERT INTO diary_table(id, username, writer, diary, file, is_deleted, created_at, updated_at)
+ VALUES(NULL,:username, :writer, :diary, :file, 0, now(), now())';
 
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':username', $_SESSION["username"], PDO::PARAM_STR);
-$stmt->bindValue(':destination', $destination, PDO::PARAM_STR);
+$stmt->bindValue(':writer', $writer, PDO::PARAM_STR);
 $stmt->bindValue(':diary', $diary, PDO::PARAM_STR);
 $stmt->bindValue(':file', $save_path, PDO::PARAM_STR);
-$stmt->bindValue(':opentime', $opentime, PDO::PARAM_STR);
 
 try {
   $status = $stmt->execute();

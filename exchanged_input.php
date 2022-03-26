@@ -15,35 +15,29 @@ check_session_id();
 </head>
 
 <body>
-  <legend>ExchangeD日記入力画面（HOME）</legend>
+  <legend class="text-white">HOME</legend>
 
   <?php
   include("navigation.php");
   ?> 
         
   <form action="exchanged_create.php" method="POST" enctype="multipart/form-data">
-    <fieldset>
-      <div  class="md:flex">
-        Dear　
-        <select name= "destination">
-          <option value = "me">me</option>
-          <option value = "parent">parent</option>
-          <option value = "family">family</option>
-          <option value = "all">all</option>
+    <fieldset  class="text-center font-semibold">
+      <div class="w-full block flex justify-center text-2xl text-purple-300 tracking-wider p-5">
+        <select name="writer" class="text-center text-purple-500">
+          <option value = "<?php echo $_SESSION["child"];?>"><?php echo $_SESSION["child"];?></option>
+          <option><?php echo $_SESSION["parent"];?></option>
         </select>
-      </div> 
-      
-      <div>
-        <textarea name="diary" rows="3" cols="50" wrap="hard" placeholder="diary"></textarea>
+        <p class="text-center">の日記</p>
+      </div>      
+      <div class="text-purple-500">
+        <textarea name="diary" rows="10" cols="50" wrap="hard" placeholder="diary"></textarea>
       </div>
-      <div>
+      <div class="text-purple-500">
         <input type="file" name="upfile" accept="image/*,video/*" capture="camera" />
       </div>
       <div>
-        opentime　 <input type="datetime-local" name="opentime">
-      </div>
-      <div>
-        <button>submit</button>
+        <button class="shadow-lg px-2 py-1  bg-purple-300 text-lg text-white font-semibold rounded  hover:bg-purple-700 hover:shadow-sm hover:translate-y-0.5 transform transition">submit</button>
       </div>
     </fieldset>
   </form>

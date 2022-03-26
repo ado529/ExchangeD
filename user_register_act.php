@@ -50,7 +50,7 @@ try {
 }
 
 $_SESSION["session_id"] = session_id();
-$_SESSION["username"] = username;
+$_SESSION["username"] = $username;
 
-header("Location:exchanged_input.php");
+header("Location:relation.php");
 exit();

@@ -25,6 +25,9 @@ try {
 
 $val = $stmt->fetch(PDO::FETCH_ASSOC);
 
+//var_dump($val);
+//exit();
+
 if (!$val) {
   echo "<p>ログイン情報に誤りがあります</p>";
   echo '<a href="user_login.php">login</a>';
@@ -35,6 +38,6 @@ if (!$val) {
   $_SESSION["is_admin"] = $val["is_admin"];
   $_SESSION["username"] = $val["username"];
   $_SESSION["id"] = $val["id"];
-  header("Location:exchanged_input.php");
+  header("Location:account.php");
   exit();
 }

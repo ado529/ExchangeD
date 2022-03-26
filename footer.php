@@ -10,7 +10,7 @@
 
 <body class="bg-white">
 
-  <footer class="text-right font-semibold">
+  <footer class="text-right font-semibold text-purple-200">
           <small>©ExchangeD.2022-03-26　　</small>
   </footer>
 

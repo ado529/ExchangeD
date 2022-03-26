@@ -2,9 +2,9 @@
 
 function connect_to_db()
 {
-  $dbn = 'mysql:dbname=heroku_23c399267c9873f;charset=utf8mb4;port=3306;host=us-cdbr-east-05.cleardb.net';
-  $user = 'bf372b7567c4a6';
-  $pwd = 'bd57bb55';
+  $dbn = 'mysql:dbname=heroku_2e76e0d5089a4a2;charset=utf8mb4;port=3306;host=us-cdbr-east-05.cleardb.net';
+  $user = 'bef601ecd22a42';
+  $pwd = 'b4c7eda6';
 
   //$dbn = 'mysql:dbname=exchanged;charset=utf8mb4;port=3306;host=localhost';
   //$user = 'root';
